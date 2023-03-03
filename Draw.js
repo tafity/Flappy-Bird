@@ -33,8 +33,6 @@ class CanvasDrawing extends Draw {
     //отрисовка земли
     this.ctx.drawImage(this._sprite, this._ground.sX, this._ground.sY, this._ground.w, this._ground.h, this._ground.x, this._ground.y, this._ground.w, this._ground.h);
     this.ctx.drawImage(this._sprite, this._ground.sX, this._ground.sY, this._ground.w, this._ground.h, this._ground.x + this._ground.w, this._ground.y, this._ground.w, this._ground.h);
-
-    
 }
 }
 
