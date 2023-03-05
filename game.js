@@ -17,11 +17,13 @@ class Game {
     }
 
     update() {
+         console.log(this._currentState)
         //стадии игры
         this._canvas.addEventListener('click', function(e){
             switch (this._currentState) {
-                case this._getReadyState: 
-                this._currentState = this._game;
+                case this._getReadyState:
+                    console.log(this._currentState) 
+                    this._currentState = this._game;
                     break;
                 case this._game:
                     this._bird.flap();
