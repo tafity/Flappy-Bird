@@ -9,11 +9,7 @@ class Messages {
         this.ctx = this._draw.ctx
         this._getReadyMessage = this._config.getReadyMessage
         this._gameOverMessage = this._config.gameOverMessage
-        this._currentState = this._config.gameState.current
-        this._getReadyState = this._config.gameState.getReady
-        this._gameOver = this._config.gameState.over
-        this._game = this._config.gameState.game
-         this.gameState = {
+        this.gameState = {
             current: 0,
             getReady: 0,
             game: 1, 
@@ -29,7 +25,7 @@ class Messages {
                     console.log(this.gameState.current)
                     break;
                 case this.gameState.game:
-                    this._bird.flap();
+                    this._bird.update();
                     break;
                 case this.gameState.over:
                     this.gameState.current = this.gameState.getReady;
@@ -41,11 +37,10 @@ class Messages {
 
     drawImage() {
         //стартовое сообщение
-        if (this._currentState == this._getReadyState) {
-            console.log('only first')
+        if (this.gameState.current == this.gameState.getReady) {
             this.ctx.drawImage(this._sprite, this._getReadyMessage.sX, this._getReadyMessage.sY, this._getReadyMessage.w, this._getReadyMessage.h, this._getReadyMessage.x, this._getReadyMessage.y, this._getReadyMessage.w, this._getReadyMessage.h)
         }
-        if (this._currentState == this._gameOver){
+        if (this.gameState.current == this.gameState.over){
         // конец игры сообщение
             this.ctx.drawImage(this._sprite, this._gameOverMessage.sX, this._gameOverMessage.sY, this._gameOverMessage.w, this._gameOverMessage.h, this._gameOverMessage.x, this._gameOverMessage.y, this._gameOverMessage.w, this._gameOverMessage.h)
         }
