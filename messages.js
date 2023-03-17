@@ -22,16 +22,15 @@ class Messages {
             switch (this.gameState.current) {
                 case this.gameState.getReady:
                     this.gameState.current = this.gameState.game;
-                    console.log(this.gameState.current)
                     break;
                 case this.gameState.game:
-                    this._bird.update();
+                    this._bird.flap();
                     break;
                 case this.gameState.over:
                     this.gameState.current = this.gameState.getReady;
                     break;
             }
-        })
+        })   
         
     }
 

@@ -1,7 +1,5 @@
 class Draw {
-    constructor () {
-       
-    }
+    constructor () {}
     
     drawImage(sprite, sX, sY, w, h, x, y){}
     clear(){}
