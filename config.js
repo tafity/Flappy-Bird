@@ -29,18 +29,29 @@ class Config {
 //птичка
     animationFrames = [
         {sX:276, sY:112},
+        {sX:276, sY:112},
+        {sX:276, sY:112},
+        {sX:276, sY:139},
+        {sX:276, sY:139},
         {sX:276, sY:139},
         {sX:276, sY:164},
+        {sX:276, sY:164},
+        {sX:276, sY:164},
         {sX:276, sY:139},
+        {sX:276, sY:139},
+        {sX:276, sY:139}
      ]
     birdCoordinats = {
                 x: 50,
                 y: 150,
                 w: 34,
                 h: 26
-
         }
     frames = 0
+    gravity = 0.20
+    jump = 3.5
+    speed = 0
+    rotation = 0
 // препятствия
     obstacles = {
         position: [],
@@ -48,16 +59,18 @@ class Config {
         h : 400,
         gap : 85,
         maxYPos : -150,
-        dx : 2
-    }
-    topPipe = {
+        dx : 2, 
+    
+    topPipe: {
         sX : 553,
         sY : 0
-    }
-    bottomPipe = {
+    }, 
+    
+    bottomPipe : {
         sX : 502,
         sY : 0
     }
+}
 
 // сообщения
     getReadyMessage = {

@@ -6,14 +6,20 @@ class Game {
         this._bird = new Bird();
         this._messages = new Messages();
         this._obstacles = new Obstacles();
+        //this._ground = new Ground();
     }
 
     update() {
         this._messages.update();
+        this._bird.stages();
         this._bird.update();
+        this._bird.move();
+        this._obstacles.update();
+        //this._obstacles.stages()
     }
 
     reset() {
+        
     }
     draw() {
         this._draw.drawImage();
