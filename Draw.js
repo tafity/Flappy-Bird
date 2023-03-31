@@ -18,7 +18,6 @@ class CanvasDrawing extends Draw {
 
         // информация по заднему фону
         this._background = this._config.background
-        this._ground = this._config.ground
     }
     drawImage(sprite, sX, sY, w, h, x, y){
     //отриасовка заднего фона канваса
@@ -27,10 +26,6 @@ class CanvasDrawing extends Draw {
     super.drawImage(sprite, sX, sY, w, h, x, y )
     this.ctx.drawImage(this._sprite, this._background.sX, this._background.sY, this._background.w, this._background.h, this._background.x, this._background.y, this._background.w, this._background.h );
     this.ctx.drawImage(this._sprite, this._background.sX, this._background.sY, this._background.w, this._background.h, this._background.x + this._background.w, this._background.y, this._background.w, this._background.h);
-
-    //отрисовка земли
-    this.ctx.drawImage(this._sprite, this._ground.sX, this._ground.sY, this._ground.w, this._ground.h, this._ground.x, this._ground.y, this._ground.w, this._ground.h);
-    this.ctx.drawImage(this._sprite, this._ground.sX, this._ground.sY, this._ground.w, this._ground.h, this._ground.x + this._ground.w, this._ground.y, this._ground.w, this._ground.h);
-}
+    }
 }
 

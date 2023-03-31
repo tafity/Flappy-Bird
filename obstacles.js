@@ -10,8 +10,6 @@ class Obstacles {
         this.bottomPipe = this._config.obstacles.bottomPipe
         this.position = this.obstacles.position
         this.maxYposition = this._config.obstacles.maxYPos
-        this.topYposition = this.position.y 
-        this.bottomYposition = this.position.y + this.obstacles.h + this.obstacles.gap
         this._draw = new CanvasDrawing()
         this._ctx = this._draw.ctx
         this.gameState = this._config.gameState
@@ -20,8 +18,11 @@ class Obstacles {
     drawImage() { 
         for (let i = 0; i < this.position.length; i++) {
             this.p = this.position[i]
+            console.log(this.p)
             this.topYposition = this.p.y 
+            console.log(topYposition)
             this.bottomYposition = this.p.y + this.obstacles.h + this.obstacles.gap
+            console.log(bottomYposition)
              //верхнее препятствие
               this._ctx.drawImage(this._sprite, this.topPipe.sX, this.topPipe.sY, this.obstacles.w, this.obstacles.h, this.p.x, this.topYposition, this.obstacles.w, this.obstacles.h)
              // нижнее препятствие
@@ -29,7 +30,7 @@ class Obstacles {
         }
     }
 
-    /*stages() {
+    stages() {
         this._canvas.addEventListener('click', (e) => {
             switch (this.gameState.current) {
               case this.gameState.getReady:
@@ -42,7 +43,7 @@ class Obstacles {
                 break;
             }
           })
-    }*/
+    }
 
     update() {
         if (this.gameState.current != this.gameState.getReady) return;
@@ -56,6 +57,7 @@ class Obstacles {
         for (let i = 0; i < this.position.length; i++) {
             this.p = this.position[i]
             this.p -= this.obstacles.dx
+            console.log(this.p)
         }
     }
 }

@@ -15,7 +15,7 @@ class Game {
         this._bird.update();
         this._bird.move();
         this._obstacles.update();
-        //this._obstacles.stages()
+        this._obstacles.stages()
     }
 
     reset() {
@@ -23,9 +23,10 @@ class Game {
     }
     draw() {
         this._draw.drawImage();
+        this._obstacles.drawImage();
         this._bird.drawImage();
         this._messages.drawImage();
-        this._obstacles.drawImage();
+        
     }
     loop() {
         this.update();

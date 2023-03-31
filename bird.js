@@ -18,7 +18,6 @@ class Bird {
       this.gravity = this._config.gravity
       this.jump = this._config.jump
       this._ground = this._config.ground
-      this.obstacles = new Obstacles();
     }
   
     drawImage() {
@@ -79,7 +78,6 @@ class Bird {
             break;
           case this.gameState.game:
             this.flap(); 
-            this.obstacles.update();
             break;
           case this.gameState.over:
             this.gameState.current = this.gameState.getReady;
