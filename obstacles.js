@@ -10,7 +10,9 @@ class Obstacles {
         this.bottomPipe = this._config.obstacles.bottomPipe
         this.position = this.obstacles.position
         this.maxYposition = this._config.obstacles.maxYPos
-        this._draw = new CanvasDrawing()
+        this.topYposition = this.position.y 
+        this.bottomYposition = this.position.y + this.obstacles.h +     this.obstacles.gap
+        this._draw = new CanvasDrawing();
         this._ctx = this._draw.ctx
         this.gameState = this._config.gameState
     }
@@ -18,16 +20,14 @@ class Obstacles {
     drawImage() { 
         for (let i = 0; i < this.position.length; i++) {
             this.p = this.position[i]
-            console.log(this.p)
+      
             this.topYposition = this.p.y 
-            console.log(topYposition)
             this.bottomYposition = this.p.y + this.obstacles.h + this.obstacles.gap
-            console.log(bottomYposition)
-             //верхнее препятствие
+             // верхнее препятствие
               this._ctx.drawImage(this._sprite, this.topPipe.sX, this.topPipe.sY, this.obstacles.w, this.obstacles.h, this.p.x, this.topYposition, this.obstacles.w, this.obstacles.h)
              // нижнее препятствие
               this._ctx.drawImage(this._sprite, this.bottomPipe.sX, this.bottomPipe.sY, this.obstacles.w, this.obstacles.h, this.p.x, this.bottomYposition, this.obstacles.w, this.obstacles.h)
-        }
+              }
     }
 
     stages() {
@@ -46,7 +46,7 @@ class Obstacles {
     }
 
     update() {
-        if (this.gameState.current != this.gameState.getReady) return;
+        if (this.gameState.current != this.gameState.game) return;
         
         if (this.frames % 100 == 0) {
             this.position.push({
@@ -57,7 +57,6 @@ class Obstacles {
         for (let i = 0; i < this.position.length; i++) {
             this.p = this.position[i]
             this.p -= this.obstacles.dx
-            console.log(this.p)
         }
     }
 }
