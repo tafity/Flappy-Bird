@@ -60,7 +60,8 @@ class Config {
         gap : 85,
         maxYPos : -150,
         dx : 2, 
-    
+        x: 200,
+        y: 0,
     topPipe: {
         sX : 553,
         sY : 0
